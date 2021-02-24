@@ -19,9 +19,9 @@ class Api::V1::DriversController < ApplicationController
         full_query << driver_contact_query if !driver_contact_query.blank?
 
         if(params[:op] == "count")
-            @drivers = Driver.select(" driverCode, firstName, lastName, status ").where(full_query.join(' AND ')).paginate(:page => params[:page], :per_page => 500).count(:all)
+            @drivers = Driver.select(" id, driverCode, firstName, lastName, status, driverPassword ").where(full_query.join(' AND ')).paginate(:page => params[:page], :per_page => 500).count(:all)
         else
-            @drivers = Driver.select(" driverCode, firstName, lastName, status ").where(full_query.join(' AND '))
+            @drivers = Driver.select(" id, driverCode, firstName, lastName, status, driverPassword ").where(full_query.join(' AND '))
         end
 
         if not @drivers.blank?
@@ -43,7 +43,7 @@ class Api::V1::DriversController < ApplicationController
     def update
         #set driver to driver instance
         set_driver
-        if @driver.update(driver_update_params)       
+        if @driver.update(driver_params)       
             render json: {id: @driver.id, driverCode: @driver.driverCode, action: 'updated', status: 'successful' },status: 200
         else
             render json: @driver.errors, status: :unprocessable_entity
@@ -55,7 +55,7 @@ class Api::V1::DriversController < ApplicationController
         begin
             @driver_new.assign_default_values
             if @driver_new.save
-                render json: {id: @driver_new.id, driverCode: @driver_new.driverCode, action: 'created', status: 'successful'}, status: :created
+                render json: {id: @driver_new.id, driverCode: @driver_new.driverCode }, status: :created
             else
                 render json: {counter: @driver_new.roll_back_app_counter, error: @driver_new.errors}, status: :unprocessable_entity
             end
@@ -69,9 +69,6 @@ class Api::V1::DriversController < ApplicationController
             @driver = Driver.find(params[:id])
         end
         def driver_params
-            params.require(:driver).permit(:firstName, :middleName, :lastName, :mobileNumber, :otherContactNumber, :emailAddress, :addressLine1, :addressLine2, :addressBarangay, :addressBarangayName, :addressLotNumber, :addressZipCode, :addressStreetName, :addressDistrictName, :addressCityName, :driverPassword)
-        end
-        def driver_update_params
             params.require(:driver).permit(:firstName, :middleName, :lastName, :mobileNumber, :otherContactNumber, :emailAddress, :addressLine1, :addressLine2, :addressBarangay, :addressBarangayName, :addressLotNumber, :addressZipCode, :addressStreetName, :addressDistrictName, :addressCityName, :driverPassword)
         end
 end

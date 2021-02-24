@@ -66,7 +66,8 @@ class Api::V1::PeopleController < ApplicationController
   def update
     set_person
     if @person.update(person_params)
-      render json: @person, status: 200
+      render json: {id: @person.id, personCode: @person.personCode, action: 'updated', status: 'successful' },status: 200
+      #render json: @person, status: 200
     else
       render json: @person.errors, status: :unprocessable_entity
     end

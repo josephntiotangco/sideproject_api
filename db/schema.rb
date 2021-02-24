@@ -125,17 +125,9 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "seatingOccupied"
     t.string "status", limit: 20
     t.datetime "updateDate"
+    t.string "driverCode", limit: 20
     t.index ["id"], name: "id_UNIQUE", unique: true
     t.index ["vehicleCode"], name: "vehicleCode_UNIQUE", unique: true
-  end
-
-  create_table "vehicleassignment", id: :integer, default: nil, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "assignedAt", null: false
-    t.string "assignedBy", limit: 45, null: false
-    t.string "status", limit: 1, null: false
-    t.datetime "updateDate", null: false
-    t.string "updateBy", limit: 45, null: false
-    t.index ["id"], name: "id_UNIQUE", unique: true
   end
 
 end

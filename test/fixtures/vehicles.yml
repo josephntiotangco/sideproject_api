@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  vehicleCode: MyString
+  plateNumber: MyString
+  vehicleType: MyString
+  registrationNumber: MyString
+  vehicleModel: MyString
+  seatingCapacity: 1
+  seatingOccupied: 1
+  status: MyString
+  updateDate: 2021-02-24 14:56:49
+  driverCode: MyString
+
+two:
+  id: 1
+  vehicleCode: MyString
+  plateNumber: MyString
+  vehicleType: MyString
+  registrationNumber: MyString
+  vehicleModel: MyString
+  seatingCapacity: 1
+  seatingOccupied: 1
+  status: MyString
+  updateDate: 2021-02-24 14:56:49
+  driverCode: MyString

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assignedAt: 2021-02-24 14:22:47
+  assignedBy: MyString
+  status: MyString
+  updateDate: 2021-02-24 14:22:47
+  updateBy: MyString
+
+two:
+  assignedAt: 2021-02-24 14:22:47
+  assignedBy: MyString
+  status: MyString
+  updateDate: 2021-02-24 14:22:47
+  updateBy: MyString
