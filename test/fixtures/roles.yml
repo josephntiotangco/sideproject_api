@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role: one
+  role_code: MyString
+  role_name: MyString
+  role_level: 1
+  create_date: 2021-02-27 16:21:37
+  created_by: MyString
+  update_date: 2021-02-27 16:21:37
+  updated_by: MyString
+
+two:
+  role: two
+  role_code: MyString
+  role_name: MyString
+  role_level: 1
+  create_date: 2021-02-27 16:21:37
+  created_by: MyString
+  update_date: 2021-02-27 16:21:37
+  updated_by: MyString

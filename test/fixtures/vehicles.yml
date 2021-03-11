@@ -2,26 +2,26 @@
 
 one:
   id: 1
-  vehicleCode: MyString
-  plateNumber: MyString
-  vehicleType: MyString
-  registrationNumber: MyString
-  vehicleModel: MyString
-  seatingCapacity: 1
-  seatingOccupied: 1
+  vehicle_code: MyString
+  vehicle_type: MyString
+  vehicle_model: MyString
+  plate_number: MyString
+  registration_number: MyString
+  seating_capacity: 1
+  seating_occupied: 1
   status: MyString
-  updateDate: 2021-02-24 14:56:49
-  driverCode: MyString
+  updateDate: 2021-02-28 14:57:41
+  end_user_code: MyString
 
 two:
   id: 1
-  vehicleCode: MyString
-  plateNumber: MyString
-  vehicleType: MyString
-  registrationNumber: MyString
-  vehicleModel: MyString
-  seatingCapacity: 1
-  seatingOccupied: 1
+  vehicle_code: MyString
+  vehicle_type: MyString
+  vehicle_model: MyString
+  plate_number: MyString
+  registration_number: MyString
+  seating_capacity: 1
+  seating_occupied: 1
   status: MyString
-  updateDate: 2021-02-24 14:56:49
-  driverCode: MyString
+  updateDate: 2021-02-28 14:57:41
+  end_user_code: MyString

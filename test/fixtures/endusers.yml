@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  end_user_code: MyString
+  end_user_type: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  contact_number: MyString
+  mobile_number: MyString
+  email: MyString
+  password: MyString
+  address_line1: MyString
+  address_line2: MyString
+  barangay: 1
+  barangay_name: MyString
+  lot_number: 1
+  zip_code: 1
+  street_name: MyString
+  district_name: MyString
+  city_name: MyString
+  status: MyString
+  password_reset_count: 1
+  password_invalid_count: 1
+
+two:
+  id: 1
+  end_user_code: MyString
+  end_user_type: MyString
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  contact_number: MyString
+  mobile_number: MyString
+  email: MyString
+  password: MyString
+  address_line1: MyString
+  address_line2: MyString
+  barangay: 1
+  barangay_name: MyString
+  lot_number: 1
+  zip_code: 1
+  street_name: MyString
+  district_name: MyString
+  city_name: MyString
+  status: MyString
+  password_reset_count: 1
+  password_invalid_count: 1

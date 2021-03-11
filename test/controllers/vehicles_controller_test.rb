@@ -12,7 +12,7 @@ class VehiclesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vehicle" do
     assert_difference('Vehicle.count') do
-      post vehicles_url, params: { vehicle: { driverCode: @vehicle.driverCode, id: @vehicle.id, plateNumber: @vehicle.plateNumber, registrationNumber: @vehicle.registrationNumber, seatingCapacity: @vehicle.seatingCapacity, seatingOccupied: @vehicle.seatingOccupied, status: @vehicle.status, updateDate: @vehicle.updateDate, vehicleCode: @vehicle.vehicleCode, vehicleModel: @vehicle.vehicleModel, vehicleType: @vehicle.vehicleType } }, as: :json
+      post vehicles_url, params: { vehicle: { end_user_code: @vehicle.end_user_code, id: @vehicle.id, plate_number: @vehicle.plate_number, registration_number: @vehicle.registration_number, seating_capacity: @vehicle.seating_capacity, seating_occupied: @vehicle.seating_occupied, status: @vehicle.status, updateDate: @vehicle.updateDate, vehicle_code: @vehicle.vehicle_code, vehicle_model: @vehicle.vehicle_model, vehicle_type: @vehicle.vehicle_type } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class VehiclesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update vehicle" do
-    patch vehicle_url(@vehicle), params: { vehicle: { driverCode: @vehicle.driverCode, id: @vehicle.id, plateNumber: @vehicle.plateNumber, registrationNumber: @vehicle.registrationNumber, seatingCapacity: @vehicle.seatingCapacity, seatingOccupied: @vehicle.seatingOccupied, status: @vehicle.status, updateDate: @vehicle.updateDate, vehicleCode: @vehicle.vehicleCode, vehicleModel: @vehicle.vehicleModel, vehicleType: @vehicle.vehicleType } }, as: :json
+    patch vehicle_url(@vehicle), params: { vehicle: { end_user_code: @vehicle.end_user_code, id: @vehicle.id, plate_number: @vehicle.plate_number, registration_number: @vehicle.registration_number, seating_capacity: @vehicle.seating_capacity, seating_occupied: @vehicle.seating_occupied, status: @vehicle.status, updateDate: @vehicle.updateDate, vehicle_code: @vehicle.vehicle_code, vehicle_model: @vehicle.vehicle_model, vehicle_type: @vehicle.vehicle_type } }, as: :json
     assert_response 200
   end
 

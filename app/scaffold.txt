@@ -1,13 +1,19 @@
 rails generate scaffold Appcounter name:string value:integer --no-migration
 
-rails generate scaffold Driver id:integer driverCode:string firstName:string middleName:string lastName:string mobileNumber:string otherContactNumber:string emailAddress:string addressLine1:string addressLine2:string addressBarangay:integer addressBarangayName:string addressLotNumber:integer addressZipCode:integer addressStreetName:string addressDistrictName:string addressCityName:string driverPassword:string status:string --no-migration
+rails generate scaffold Enduser id:integer end_user_code:string end_user_type:string first_name:string middle_name:string last_name:string contact_number:string mobile_number:string email:string password:string address_line1:string address_line2:string barangay:integer barangay_name:string lot_number:integer zip_code:integer street_name:string district_name:string city_name:string status:string password_reset_count:integer password_invalid_count:integer --no-migration
 
-rails generate scaffold Person id:integer personCode:string firstName:string middleName:string lastName:string mobileNumber:string otherContactNumber:string emailAddress:string addressLine1:string addressLine2:string addressBarangay:integer addressBarangayName:string addressLotNumber:integer addressZipCode:integer addressStreetName:string addressDistrictName:string addressCityName:string personPassword:string status:string --no-migration
+rails generate scaffold OauthAccessGrant resource_owner:references application:references token:string expires_in:integer redirect_uri:text revoked_at:datetime scopes:string --no-migration
 
-rails generate scaffold Reservation id:integer reservationCode:string driverCode:string bookingDate:string estimatedTripDate:datetime personDestination:string personOrigin:string status:string --no-migration
+rails generate scaffold OauthAccessToken resource_owner:references application:references token:string refresh_token:string expires_in:integer revoked_at:datetime scopes:string previous_refresh_token:string --no-migration
 
-rails generate scaffold Systemuser userCode:string userName:string userEmail:string passWord:string contactNumber:string --no-migration
+rails generate scaffold OauthApplication name:string uid:string secret:string redirect_uri:text scopes:string confidential:boolean --no-migration
 
-rails generate scaffold Trip id:integer tripId:string pointOneEstimatedArrival:string pointTwoEstimatedArrival:string status:string personOrigin:string personDestination:string tripStartDate:datetime tripEndDate:datetime tripRating:decimal tripComment:text reservationCode:string --no-migration
+rails generate scaffold Reservation id:integer reservation_code:string end_user_code:string reservation_date:datetime estimated_trip_date:datetime destination:string origin:string status:string --no-migration
 
-rails generate scaffold Vehicle id:integer vehicleCode:string plateNumber:string vehicleType:string registrationNumber:string vehicleModel:string seatingCapacity:integer seatingOccupied:integer status:string updateDate:datetime driverCode:string --no-migration
+rails generate scaffold Role role:references role_code:string role_name:string role_level:integer create_date:datetime created_by:string update_date:datetime updated_by:string --no-migration
+
+rails generate scaffold Trip estimated_arrival_point_one:datetime estimated_arrival_point_two:datetime status:string origin:string destination:string start_date:datetime end_date:datetime trip_rating:decimal remarks:text reservation_code:string --no-migration
+
+rails generate scaffold User user:references user_code:string username:string email:string contact_number:string password:string encrypted_password:string create_date:datetime created_by:string update_date:datetime updated_by:string role:references reset_password_token:string remember_created_at:datetime reset_password_sent_at:datetime --no-migration
+
+rails generate scaffold Vehicle id:integer vehicle_code:string vehicle_type:string vehicle_model:string plate_number:string registration_number:string seating_capacity:integer seating_occupied:integer status:string updateDate:datetime end_user_code:string --no-migration
