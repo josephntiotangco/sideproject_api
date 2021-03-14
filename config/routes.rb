@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   use_doorkeeper do
+    #skip_controllers :endusers, only: [:index, :create]
     # No need to register client application
     #skip_controllers :applications, :authorized_applications
   end
@@ -22,6 +23,6 @@ Rails.application.routes.draw do
       resources :vehicles, only: [:index, :show, :update, :create]
       #resources :users, only: [:index, :show]
       resources :roles
-    end #v1
-  end #api
+    end #api
+  end #v1
 end

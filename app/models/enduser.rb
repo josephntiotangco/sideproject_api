@@ -1,5 +1,6 @@
 class Enduser < ApplicationRecord
     devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
+    #before_create :confirmation_token
 
     self.table_name = "enduser"
     self.primary_key = :id
@@ -17,6 +18,12 @@ class Enduser < ApplicationRecord
         self.email_confirmed = 0
         self.password_reset_count = 0
         self.password_invalid_count = 0
+        self.consent_date = DateTime.current
+        self.create_date = DateTime.current
+        self.create_by = "System"
+        if self.email_confirm_token.blank?
+            self.email_confirm_token = SecureRandom.urlsafe_base64.to_s
+        end
     end
 
     def roll_back_app_counter
@@ -25,4 +32,9 @@ class Enduser < ApplicationRecord
         return counter_count
     end
 
+    #def confirmation_token
+    #    if self.email_confirm_token.blank?
+    #        self.email_confirm_token = SecureRandom.urlsafe_base64.to_s
+    #    end
+    #end
 end
